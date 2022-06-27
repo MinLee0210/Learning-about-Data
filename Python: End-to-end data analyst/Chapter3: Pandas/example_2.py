@@ -90,12 +90,57 @@ df6 = pd.DataFrame(np.arange(8).reshape(2, 4),
 # print()
 # print(df5.describe(percentiles=[0.5, 0.8]))
 # print(df5.apply(np.std, axis=1))
+
 # Using function 
 # Using lambda function
 # Take each column then use its max subtracts its min
 f = lambda x: x.max() - x.min()
-print(df5.apply(f, axis = 1))
+# print(df5.apply(f, axis = 1))
 # Using define function
 def sigmoid(x):
     return 1/(1 + np.exp(x))
-print(df5.apply(sigmoid))
+# print(df5.apply(sigmoid))
+
+# Sorting
+df7 = pd.DataFrame(np.arange(12).reshape(3, 4), 
+                   columns=['b', 'd', 'a', 'c'], 
+                   index=['x', 'a', 'z'])
+# print(df7)
+# print()
+# # Sort by index
+# print(df7.sort_index(axis=1))
+# print()
+# print(df7.sort_index(axis=0))
+# print()
+
+df8 = pd.DataFrame(np.random.rand(12).reshape(4, 3), 
+                   columns=['a', 'b', 'c'])
+
+# print(df8)
+# print()
+# print(df8.cov())
+# print()
+# print(df8.corr(method='spearman'))
+# print()
+# print(df8.corr(method='kendall'))
+# print()
+# print(df8.corr(method='pearson'))
+# print()
+
+# df9 = pd.DataFrame(np.arange(8).reshape(4, 2), 
+#                    columns=['a', 'b'])
+# print(df9)
+# print()
+# print(df8.corrwith(df9))
+
+df = pd.DataFrame(np.random.rand(12).reshape(4, 3), 
+                  index=[['a', 'a', 'b', 'b'], 
+                        [0, 1, 0, 1]], 
+                  columns=[['x', 'x', 'y'], [0, 1, 0]])
+print(df)
+print()
+print(df.index)
+print()
+print(df.columns)
+print()
+print(df['x'])

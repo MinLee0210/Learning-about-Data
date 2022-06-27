@@ -9,12 +9,12 @@ s1 = pd.Series(np.random.rand(4),
 # print()
 
 s2 = pd.Series(np.random.rand(4))
-print(s2)
-print()
+# print(s2)
+# print()
 # Reindex: if the labels do not exist in the data object, a default
 # value NaN will be automatically assigned to the position
-print(s2.reindex([0, 2,'b', 3]))
-print()
+# print(s2.reindex([0, 2,'b', 3]))
+# print()
 
 s1['c'] = 3.14
 # print(s1)
@@ -44,6 +44,24 @@ s6 = pd.Series(np.array([2.71, 3.14]), index=['z', 'y'])
 # Use head() and tail() to show the result of first five and last n-rows of 
 # the longer Series
 s7 = pd.Series(np.random.rand(10000))
-print(s7.head())
+# print(s7.head())
+# print()
+# print(s7.tail(5))
+
+# Sorting
+# Sort by index
+# print(s4.sort_index())
+# print()
+# Sort that face the problem of having NaN values
+# print(s4.sort_index(na_position='first'))
+# print()
+
+# Indexing and selecting data
+# print(s4[['024', '002']])
+
+s8 = pd.Series(np.random.rand(8), index=[['a', 'a', 'b', 'b', 'c', 'c', 'd', 'd'],
+                                         [0, 1, 0, 1, 0, 1, 0, 1]])
+print(s8)
+# Rearrange Series with many index levels into DataFrame
 print()
-print(s7.tail(5))
+print(s8.unstack())

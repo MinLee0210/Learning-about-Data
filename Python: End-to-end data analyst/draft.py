@@ -15,3 +15,6 @@ data = pd.DataFrame({'Brand' : ['Maruti', 'Hyundai', 'Tata',
                                'Mumbai','Chennai',  'Ghaziabad'],
                      'Mileage' :  [28, 27, 25, 26, 28, 
                                    29, 24, 21, 24]})
+temp=[-1, -1]
+temp.sort()
+print(temp)
